@@ -121,9 +121,13 @@ export default function Categories() {
   };
 
   // Fetch categories from API
-  const fetchCategories = async () => {
+  const fetchCategories = async (query: string = "") => {
     try {
-      const res = await fetch(`${baseUrl}/admin/get-all-categories`, {
+      const url = query
+        ? `${baseUrl}/admin/get-all-categories?q=${encodeURIComponent(query)}`
+        : `${baseUrl}/admin/get-all-categories`;
+
+      const res = await fetch(url, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -140,12 +144,18 @@ export default function Categories() {
   };
 
   useEffect(() => {
-    fetchCategories();
-  }, [token]);
+    if (!token) return;
 
-  const filteredCategories = categories.filter((c) =>
-    c.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+    const delay = setTimeout(() => {
+      fetchCategories(searchTerm);
+    }, 100); // debounce
+
+    return () => clearTimeout(delay);
+  }, [token, searchTerm]);
+
+  // const filteredCategories = categories.filter((c) =>
+  //   c.name.toLowerCase().includes(searchTerm.toLowerCase())
+  // );
 
   const getStatusColor = (status: boolean) =>
     status
@@ -334,7 +344,7 @@ export default function Categories() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {filteredCategories.map((category, index) => (
+              {categories.map((category, index) => (
                 <TableRow
                   key={category._id}
                   className="border-border hover:bg-muted/50"
