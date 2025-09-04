@@ -1,4 +1,4 @@
-import { LayoutDashboard, Package, ShoppingCart, Users, Settings, BarChart3 } from "lucide-react";
+import { LayoutDashboard, Grid, Layers, Package, ShoppingCart, Users, Settings, BarChart3 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import {
   Sidebar,
@@ -13,7 +13,8 @@ import {
 } from "@/components/ui/sidebar";
 
 const menuItems = [
-  { title: "Dashboard", url: "/admin", icon: LayoutDashboard },
+  { title: "Dashboard", url: "/admin/dashboard", icon: LayoutDashboard },
+  { title: "Categories", url: "/admin/categories", icon: Layers },
   { title: "Products", url: "/admin/products", icon: Package },
   { title: "Orders", url: "/admin/orders", icon: ShoppingCart },
   { title: "Customers", url: "/admin/customers", icon: Users },
@@ -26,20 +27,20 @@ export function AdminSidebar() {
   const isCollapsed = state === "collapsed";
 
   return (
-    <Sidebar className={isCollapsed ? "w-16" : "w-64 border-r border-border bg-sidebar"} collapsible="icon">
+    <Sidebar className={isCollapsed ? "w-24" : "w-64 border-r border-border bg-sidebar"} collapsible="icon">
       <SidebarContent className="p-0">
-        <div className="p-6 border-b border-border">
+        <div className="px-3 py-4 border-b border-border">
           <h2 className={`font-bold text-lg text-sidebar-foreground ${isCollapsed ? "hidden" : "block"}`}>
             Admin Panel
           </h2>
           {isCollapsed && (
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+            <div className="w-7 h-7 bg-primary rounded-lg flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-sm">A</span>
             </div>
           )}
         </div>
         
-        <SidebarGroup className="px-4 py-6">
+        <SidebarGroup className="px-2 py-4">
           <SidebarGroupLabel className={isCollapsed ? "hidden" : "text-sidebar-foreground/70 text-xs font-medium uppercase tracking-wider mb-4"}>
             Navigation
           </SidebarGroupLabel>
@@ -59,7 +60,7 @@ export function AdminSidebar() {
                         } ${isCollapsed ? "justify-center" : ""}`
                       }
                     >
-                      <item.icon className="h-5 w-5 flex-shrink-0" />
+                      <item.icon className="h-6 w-6 flex-shrink-0" />
                       {!isCollapsed && <span className="font-medium">{item.title}</span>}
                     </NavLink>
                   </SidebarMenuButton>

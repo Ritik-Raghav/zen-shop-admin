@@ -113,7 +113,7 @@ export default function Customers() {
 
       {/* Customer Stats */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <Card className="bg-gradient-card shadow-card">
+        <Card className="bg-card shadow-card">
           <CardContent className="p-6">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-primary/10 rounded-lg">
@@ -127,7 +127,7 @@ export default function Customers() {
           </CardContent>
         </Card>
 
-        <Card className="bg-gradient-card shadow-card">
+        <Card className="bg-card shadow-card">
           <CardContent className="p-6">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-success/10 rounded-lg">
@@ -141,7 +141,7 @@ export default function Customers() {
           </CardContent>
         </Card>
 
-        <Card className="bg-gradient-card shadow-card">
+        <Card className="bg-card shadow-card">
           <CardContent className="p-6">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-warning/10 rounded-lg">
@@ -155,7 +155,7 @@ export default function Customers() {
           </CardContent>
         </Card>
 
-        <Card className="bg-gradient-card shadow-card">
+        <Card className="bg-card shadow-card">
           <CardContent className="p-6">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-yellow-500/10 rounded-lg">
@@ -171,7 +171,7 @@ export default function Customers() {
       </div>
 
       {/* Filters and Search */}
-      <Card className="bg-gradient-card shadow-card">
+      <Card className="bg-card shadow-card">
         <CardContent className="p-6">
           <div className="flex flex-col sm:flex-row gap-4">
             <div className="relative flex-1">
@@ -192,7 +192,7 @@ export default function Customers() {
       </Card>
 
       {/* Customers Table */}
-      <Card className="bg-gradient-card shadow-card">
+      <Card className="bg-card shadow-card">
         <CardHeader>
           <CardTitle>Customer Directory</CardTitle>
         </CardHeader>

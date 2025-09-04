@@ -95,14 +95,14 @@ export default function Products() {
           <h1 className="text-3xl font-bold text-foreground">Products</h1>
           <p className="text-muted-foreground mt-2">Manage your product inventory and catalog.</p>
         </div>
-        <Button className="bg-gradient-primary hover:bg-primary-hover shadow-card">
+        <Button className="bg-primary hover:bg-primary-hover shadow-card">
           <Plus className="h-4 w-4 mr-2" />
           Add Product
         </Button>
       </div>
 
       {/* Filters and Search */}
-      <Card className="bg-gradient-card shadow-card">
+      <Card className="bg-card shadow-card">
         <CardContent className="p-6">
           <div className="flex flex-col sm:flex-row gap-4">
             <div className="relative flex-1">
@@ -123,7 +123,7 @@ export default function Products() {
       </Card>
 
       {/* Products Table */}
-      <Card className="bg-gradient-card shadow-card">
+      <Card className="bg-card shadow-card">
         <CardHeader>
           <CardTitle>Product Inventory</CardTitle>
         </CardHeader>
@@ -189,13 +189,13 @@ export default function Products() {
 
       {/* Quick Stats */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <Card className="bg-gradient-card shadow-card">
+        <Card className="bg-card shadow-card">
           <CardContent className="p-6">
             <div className="text-2xl font-bold text-foreground">{products.length}</div>
             <p className="text-sm text-muted-foreground">Total Products</p>
           </CardContent>
         </Card>
-        <Card className="bg-gradient-card shadow-card">
+        <Card className="bg-card shadow-card">
           <CardContent className="p-6">
             <div className="text-2xl font-bold text-success">
               {products.filter(p => p.status === "active").length}
@@ -203,7 +203,7 @@ export default function Products() {
             <p className="text-sm text-muted-foreground">Active Products</p>
           </CardContent>
         </Card>
-        <Card className="bg-gradient-card shadow-card">
+        <Card className="bg-card shadow-card">
           <CardContent className="p-6">
             <div className="text-2xl font-bold text-warning">
               {products.filter(p => p.stock < 20).length}
@@ -211,7 +211,7 @@ export default function Products() {
             <p className="text-sm text-muted-foreground">Low Stock</p>
           </CardContent>
         </Card>
-        <Card className="bg-gradient-card shadow-card">
+        <Card className="bg-card shadow-card">
           <CardContent className="p-6">
             <div className="text-2xl font-bold text-destructive">
               {products.filter(p => p.status === "out-of-stock").length}

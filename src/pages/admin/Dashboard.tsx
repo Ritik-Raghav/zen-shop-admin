@@ -61,7 +61,7 @@ export default function Dashboard() {
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {stats.map((stat) => (
-          <Card key={stat.title} className="bg-gradient-card shadow-card hover:shadow-hover transition-shadow">
+          <Card key={stat.title} className="bg-card shadow-card hover:shadow-hover transition-shadow">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-muted-foreground">
                 {stat.title}
@@ -89,7 +89,7 @@ export default function Dashboard() {
       {/* Charts Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Revenue Chart */}
-        <Card className="bg-gradient-card shadow-card">
+        <Card className="bg-card shadow-card">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <TrendingUp className="h-5 w-5 text-primary" />
@@ -109,7 +109,7 @@ export default function Dashboard() {
         </Card>
 
         {/* Orders Chart */}
-        <Card className="bg-gradient-card shadow-card">
+        <Card className="bg-card shadow-card">
           <CardHeader>
             <CardTitle>Orders Trend</CardTitle>
           </CardHeader>
@@ -135,7 +135,7 @@ export default function Dashboard() {
       {/* Bottom Row */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Category Distribution */}
-        <Card className="bg-gradient-card shadow-card">
+        <Card className="bg-card shadow-card">
           <CardHeader>
             <CardTitle>Sales by Category</CardTitle>
           </CardHeader>
@@ -170,7 +170,7 @@ export default function Dashboard() {
         </Card>
 
         {/* Recent Activity */}
-        <Card className="lg:col-span-2 bg-gradient-card shadow-card">
+        <Card className="lg:col-span-2 bg-card shadow-card">
           <CardHeader>
             <CardTitle>Recent Activity</CardTitle>
           </CardHeader>
