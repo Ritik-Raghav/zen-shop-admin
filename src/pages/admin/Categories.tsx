@@ -231,8 +231,8 @@ export default function Categories() {
 
   const handleToggleStatus = async (id: string, currentStatus: boolean) => {
     try {
-      const res = await fetch(`${baseUrl}/admin/update-category/${id}`, {
-        method: "PUT",
+      const res = await fetch(`${baseUrl}/admin/toggle-category-status/${id}`, {
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
